@@ -36,16 +36,14 @@ function submitForm4(){
 	document.getElementById("form-1-container").style.display = 'none';
 	document.getElementById("form-2-container").style.display = 'none';
 	document.getElementById("form-3-container").style.display = 'none';
-
-
-
+alert('almost done');
 } 
 
 function submitAll() {
 	// vars for simple, inter, and adv
 	var simple = 0, inter = 0, adv = 0;
 	// array for checked from local storage
-	var allChosen = [localStorage.form-1-preference, localStorage.form-2-status, localStorage.form-3-place, localStorage.form-4-ingrediants];
+	var allChosen = [localStorage.getItem("form-1-preference"), localStorage.getItem("form-2-status"), localStorage.getItem("form-3-place"), localStorage.getItem("form-4-ingrediants")];
 	// loop going through array to count how many of each var in the array
 	for (var i = 0, length = allChosen.length; i < length; i++) {
 		if (allChosen[i] === "Simple") {
@@ -55,20 +53,20 @@ function submitAll() {
 		} else {
 			adv++;
 		}
-		i++;
 	}
 
-	var done;
+	
 	// check to see which var has the most
 	if (simple > inter && simple > adv) {
 		//returns jquery to route them to make ramen
-		 done = alert("Simple");
+		alert("Simple");
 	} else if (inter > simple && inter > adv) {
 		// returns jquery to route them to make soup
-		done = alert("Inter");
+		alert("Inter");
 	} else {
 		// returns jquery to route them yelp
-		done = alert("Adv");
+		alert("Adv");
 	}
-	return done;
+	/**/
+	
 }
